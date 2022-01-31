@@ -234,10 +234,6 @@ a .fab {
   padding-left: 1em;
 }
 
-.school {
-  text-transform: capitalize;
-}
-
 .school span {
   color: #889499;
   text-decoration: underline;
