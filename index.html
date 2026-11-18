@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -198,7 +198,6 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 12px;
-      margin-bottom: 28px;
     }
 
     .btn-primary {
@@ -233,33 +232,13 @@
       gap: 8px;
       border: 1px solid var(--border);
       cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
     }
 
     .btn-secondary:hover {
       background: var(--surface-hover);
       border-color: var(--text-muted);
-    }
-
-    .social-strip {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-    }
-
-    .social-strip a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.15s ease;
-    }
-
-    .social-strip a:hover {
-      color: var(--accent);
+      transform: translateY(-1px);
     }
 
     /* Hero Profile Card */
@@ -415,12 +394,12 @@
       overflow: hidden;
     }
 
-    .banner-1 { background: linear-gradient(135deg, rgba(37,99,235,0.14), rgba(14,165,233,0.06)); }
-    .banner-2 { background: linear-gradient(135deg, rgba(16,185,129,0.14), rgba(37,99,235,0.06)); }
-    .banner-3 { background: linear-gradient(135deg, rgba(139,92,246,0.14), rgba(37,99,235,0.06)); }
-    .banner-4 { background: linear-gradient(135deg, rgba(245,158,11,0.14), rgba(239,68,68,0.06)); }
-    .banner-5 { background: linear-gradient(135deg, rgba(20,184,166,0.14), rgba(99,102,241,0.06)); }
-    .banner-6 { background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(168,85,247,0.06)); }
+    .banner-1 { background: linear-gradient(135deg, rgba(37,99,235,0.18), rgba(14,165,233,0.08)); }
+    .banner-2 { background: linear-gradient(135deg, rgba(16,185,129,0.18), rgba(37,99,235,0.08)); }
+    .banner-3 { background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(37,99,235,0.08)); }
+    .banner-4 { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(239,68,68,0.08)); }
+    .banner-5 { background: linear-gradient(135deg, rgba(20,184,166,0.18), rgba(99,102,241,0.08)); }
+    .banner-6 { background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(168,85,247,0.08)); }
 
     .work-tag {
       font-family: "JetBrains Mono", monospace;
@@ -680,35 +659,6 @@
         display: none;
       }
     }
-
-    /* Clean Print Layout for CV */
-    @media print {
-      .navbar, .hero-cta, .filter-bar, #works, #contact, footer, .no-print {
-        display: none !important;
-      }
-      body {
-        background: #fff !important;
-        color: #111 !important;
-        font-size: 11pt;
-      }
-      .container {
-        max-width: 100%;
-        padding: 0;
-      }
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 0 0 16px;
-      }
-      .profile-card, .cv-card, .skill-card {
-        background: #fff !important;
-        border: 1px solid #ddd !important;
-        box-shadow: none !important;
-        break-inside: avoid;
-      }
-      section {
-        padding: 20px 0;
-      }
-    }
   </style>
 </head>
 <body>
@@ -736,8 +686,18 @@
         <a class="icon-btn" href="mailto:95gazzolafrancy@gmail.com" aria-label="Email" title="Email">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>
         </a>
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
-          <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme" title="Switch to Light Mode">
+          <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -759,15 +719,10 @@
         <div class="hero-cta">
           <a href="#works" class="btn-primary">Selected Works</a>
           <a href="#cv" class="btn-secondary">Curriculum Vitae</a>
-          <button class="btn-secondary no-print" onclick="window.print()">Print / Save PDF</button>
-        </div>
-
-        <div class="social-strip">
-          <a href="mailto:95gazzolafrancy@gmail.com">95gazzolafrancy@gmail.com</a>
-          <span>·</span>
-          <a href="https://www.linkedin.com/in/francesco-gazzola" target="_blank" rel="noopener">linkedin.com/in/francesco-gazzola</a>
-          <span>·</span>
-          <a href="https://github.com/95gas" target="_blank" rel="noopener">github.com/95gas</a>
+          <a href="./Francesco_Gazzola-cv_eng.pdf" download="Francesco_Gazzola-cv_eng.pdf" class="btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV (PDF)
+          </a>
         </div>
       </div>
 
@@ -909,7 +864,10 @@
           <span class="section-label">Curriculum Vitae</span>
           <h2>Experience &amp; Background</h2>
         </div>
-        <button class="btn-secondary no-print" onclick="window.print()">Download / Print CV</button>
+        <a href="./Francesco_Gazzola-cv_eng.pdf" download="Francesco_Gazzola-cv_eng.pdf" class="btn-secondary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV (PDF)
+        </a>
       </div>
 
       <!-- Work Experience -->
@@ -1173,16 +1131,37 @@
   </footer>
 
   <script>
-    // Light / Dark theme toggle
+    // Dark / Light theme toggle (Dark default)
     const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
     const root = document.documentElement;
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) root.setAttribute("data-theme", savedTheme);
+
+    const sunSVG = `
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    `;
+    const moonSVG = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+
+    function applyTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      themeIcon.innerHTML = theme === "dark" ? sunSVG : moonSVG;
+      themeToggle.title = theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+    }
+
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    applyTheme(savedTheme);
 
     themeToggle.addEventListener("click", () => {
       const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
+      applyTheme(next);
     });
 
     // Category filter for Selected Works
