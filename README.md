@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+# Francesco Gazzola — Personal Portfolio & CV
 
-You can use the [editor on GitHub](https://github.com/95gas/95gas.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Source repository for **[95gas.github.io](https://95gas.github.io)**, my personal portfolio website hosted via **GitHub Pages**.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## About Me
+I am an **AI Engineer** with an MSc in Computer Engineering (AI & Robotics track) from the **University of Padua**. My work focuses on:
+- **Agentic AI & Context Engineering:** Production-grade RAG / GraphRAG pipelines, Model Context Protocol (MCP), LlamaIndex, LangChain, and Human-in-the-Loop (HITL) workflows.
+- **LLM Observability & Governance:** OpenTelemetry, Grafana, Loki, NeMo Evaluator, Ragas, Open Policy Agent (OPA), NeMo Guardrails, and Microsoft Presidio.
+- **Cloud-Native Backend Engineering:** Python (FastAPI, AsyncIO), Temporal orchestration, Docker, Kubernetes, and CI/CD pipelines.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Repository Structure
+```text
+.
+├── index.html                     # Single-file responsive portfolio & interactive CV
+├── Francesco_Gazzola-cv_eng.pdf   # Downloadable PDF version of my Curriculum Vitae
+└── README.md                      # Repository documentation
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Features
+- **Dark-First Minimalist UI:** Responsive layout with a persistent dark/light theme switcher.
+- **Filterable Selected Works:** Interactive category filtering across Agentic AI & RAG and Computer Vision & OCR projects.
+- **Full Curriculum Vitae:** Structured sections covering Work Experience, Technical Skills, Education & International Exchanges, and Certifications, paired with direct PDF download (`Francesco_Gazzola-cv_eng.pdf`).
+- **Zero Build Dependencies:** Pure semantic HTML, CSS variables, and vanilla JavaScript—ready to deploy directly on GitHub Pages without build steps.
 
-### Jekyll Themes
+## Local Preview
+No bundler or dependencies are required. Clone the repository and open `index.html` in your browser, or run a lightweight local server:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/95gas/95gas.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```bash
+git clone https://github.com/95gas/95gas.github.io.git
+cd 95gas.github.io
+python3 -m http.server 8000
+```
 
-### Support or Contact
+Then visit `http://localhost:8000`.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Contact
+- **Website:** [95gas.github.io](https://95gas.github.io)
+- **LinkedIn:** [linkedin.com/in/francesco-gazzola](https://www.linkedin.com/in/francesco-gazzola)
+- **GitHub:** [github.com/95gas](https://github.com/95gas)
+- **Email:** [95gazzolafrancy@gmail.com](mailto:95gazzolafrancy@gmail.com)
